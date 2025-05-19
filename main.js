@@ -1,9 +1,17 @@
 let addBtns = document.querySelectorAll(".add");
 let mycard = document.querySelector(".mycard");
 let grandTotal = document.getElementById("total");
+let cartToggle = document.getElementById("cart-toggle");
+let cartSection = document.getElementById("cart-section");
+let cartCount = document.getElementById("cart-count");
 
 let itemArray = [];
 let grandTotalValue = 0;
+
+// Toggle cart visibility
+cartToggle.addEventListener("click", () => {
+  cartSection.classList.toggle("hidden");
+});
 
 // Fetch products from API
 async function fetchProducts() {
@@ -83,8 +91,13 @@ function updateCartDisplay() {
   const cartContainer = document.getElementById("cart-container");
   if (cart.length === 0) {
     cartContainer.innerHTML = "<h2 class='empty-cart'>NO ITEM ADDED</h2>";
+    cartCount.textContent = "0";
     return;
   }
+
+  // Update cart count
+  const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+  cartCount.textContent = totalItems;
 
   let cartHTML = "";
   cart.forEach((item) => {
