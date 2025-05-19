@@ -7,12 +7,16 @@ let grandTotalValue = 0;
 
 // Fetch products from API
 async function fetchProducts() {
+  const productsContainer = document.getElementById("products-container");
+  // Show loading spinner
+  productsContainer.innerHTML = `<div class="spinner"></div>`;
   try {
     const response = await fetch("https://fakestoreapi.com/products");
     const products = await response.json();
     displayProducts(products);
   } catch (error) {
     console.error("Error fetching products:", error);
+    productsContainer.innerHTML = "<p>Error loading products.</p>";
   }
 }
 
