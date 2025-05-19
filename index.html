@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Product Store</title>
+    <link rel="stylesheet" href="./main.css" />
+    <script src="main.js" defer></script>
+  </head>
+
+  <body>
+    <div class="container">
+      <h1 class="page-title">Product Store</h1>
+      <div class="cart-header">
+        <div class="cart-items-label">CART ITEMS</div>
+        <div class="cart-details">
+          <div class="cart-detail-item">PRICE</div>
+          <div class="cart-detail-item">QUANTITY</div>
+          <div class="cart-detail-item">SUBTOTAL</div>
+          <div class="cart-detail-item">ACTION</div>
+        </div>
+      </div>
+      <div class="cart-content" id="cart-container">
+        <h2 class="empty-cart">NO ITEM ADDED</h2>
+      </div>
+            <!-- Products will be dynamically added here -->
+      <div class="cart-total">
+        <h3>GRAND TOTAL: $</h3>
+        <p id="total">0.00</p>
+      </div>
+ 
+      <h2 class="section-title">SUGGESTED PRODUCTS:</h2>
+      <div class="products-grid" id="products-container">
+      </div>
+   </div>
+  </body>
+</html>
